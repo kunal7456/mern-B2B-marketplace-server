@@ -7,6 +7,7 @@ import {
   deleteCoupon,
   getCoupon,
   newCoupon,
+  sendEmail,
   updateCoupon,
 } from "../controllers/payment.js";
 
@@ -30,5 +31,8 @@ app
   .get(adminOnly, getCoupon)
   .put(adminOnly, updateCoupon)
   .delete(adminOnly, deleteCoupon);
+
+app.post("/mail",sendEmail);
+
 
 export default app;
