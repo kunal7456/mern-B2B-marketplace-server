@@ -20,8 +20,13 @@ config({
 });
 const app = express();
 app.use(
-  cors()
+  cors({
+    origin: '*',
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
 );
+
 
 const port = process.env.PORT || 4000;
 const mongoURI = process.env.MONGO_URI || "";
